@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "plan-steps",
+  "description": "A side pane that shows the current plan step by step.",
+  "owner": { "name": "Alex" },
+  "plugins": [
+    {
+      "name": "plan-steps",
+      "description": "A side pane that shows the current plan step by step: done, in progress, next",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "name": "plan-steps",
+  "version": "0.5.0",
+  "description": "A side pane that shows Claude's current plan step by step, a little animated Claude, and your Apple (iCloud) calendar",
+  "author": { "name": "alexidk02" },
+  "repository": "https://github.com/alexidk02/claude-plan-pane",
+  "license": "MIT",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "calendarUser": {
+      "type": "string",
+      "title": "Apple ID",
+      "description": "The email of your Apple ID (or your CalDAV username). Leave empty to hide the calendar.",
+      "required": false,
+      "default": ""
+    },
+    "calendarPassword": {
+      "type": "string",
+      "title": "App-specific password",
+      "description": "Made at account.apple.com > Sign-In and Security > App-Specific Passwords. Not your Apple ID password.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    },
+    "showCalendar": {
+      "type": "boolean",
+      "title": "Show calendar",
+      "description": "Show the calendar section in the Plan pane.",
+      "default": true
+    },
+    "days": {
+      "type": "number",
+      "title": "Days to show",
+      "description": "How many days from today (1 to 14).",
+      "min": 1,
+      "max": 14,
+      "default": 7
+    },
+    "layout": {
+      "type": "string",
+      "title": "Layout",
+      "description": "columns: days side by side; list: one day under another.",
+      "options": ["columns", "list"],
+      "default": "columns"
+    },
+    "position": {
+      "type": "string",
+      "title": "Position",
+      "description": "Where the calendar sits in the pane.",
+      "options": ["bottom", "top"],
+      "default": "bottom"
+    },
+    "hiddenCalendars": {
+      "type": "string",
+      "title": "Hidden calendars",
+      "description": "Calendar names to leave out, separated by commas (e.g. Birthdays, Work).",
+      "default": ""
+    },
+    "timeZone": {
+      "type": "string",
+      "title": "Time zone",
+      "description": "IANA name such as Europe/Paris. Empty uses the computer's time zone.",
+      "default": ""
+    },
+    "refreshMinutes": {
+      "type": "number",
+      "title": "Refresh every (minutes)",
+      "description": "How often the calendar is fetched again.",
+      "min": 1,
+      "max": 240,
+      "default": 15
+    },
+    "serverUrl": {
+      "type": "string",
+      "title": "CalDAV server",
+      "description": "https://caldav.icloud.com for Apple; any CalDAV server with a username and password also works (Fastmail, Nextcloud...).",
+      "default": "https://caldav.icloud.com"
+    }
+  }
+}
